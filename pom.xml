@@ -75,7 +75,14 @@
     <system>jira</system>
     <url>https://issues.apache.org/jira/browse/SUREFIRE</url>
   </issueManagement>
-
+    <distributionManagement>
+        <repository>
+            <id>drfocused-api</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Credentially/drfocused-api</url>
+        </repository>
+    </distributionManagement>
+    
   <properties>
     <javaVersion>7</javaVersion>
     <mavenVersion>3.0</mavenVersion>
