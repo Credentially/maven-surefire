@@ -75,16 +75,6 @@
     <system>jira</system>
     <url>https://issues.apache.org/jira/browse/SUREFIRE</url>
   </issueManagement>
-  <ciManagement>
-    <system>Jenkins</system>
-    <url>https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-surefire</url>
-  </ciManagement>
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <url>scm:svn:https://svn.apache.org/repos/asf/maven/website/components/${maven.site.path}</url>
-    </site>
-  </distributionManagement>
 
   <properties>
     <javaVersion>7</javaVersion>
@@ -100,7 +90,6 @@
     <mavenSharedUtilsVersion>3.1.0</mavenSharedUtilsVersion>
     <powermockVersion>2.0.5</powermockVersion>
     <jacocoVersion>0.8.7</jacocoVersion>
-    <maven.surefire.scm.devConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-surefire.git</maven.surefire.scm.devConnection>
     <maven.site.path>surefire-archives/surefire-LATEST</maven.site.path>
     <maven.compiler.testSource>1.${javaVersion}</maven.compiler.testSource>
     <maven.compiler.testTarget>1.${javaVersion}</maven.compiler.testTarget>
