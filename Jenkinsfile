@@ -33,7 +33,7 @@ node('jenkins-build-agent') {
 
 
             stage('Build') {
-                mvn ' -T 2C site site:stage -Dmaven.test.skip=true -Drat.skip=true -P reporting,run-its'
+                mvn ' -T 2C clean install -Dmaven.test.skip=true -Drat.skip=true -P reporting,run-its'
             }
 
             stage('Deploy') {
