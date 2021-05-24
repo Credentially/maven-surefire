@@ -81,6 +81,11 @@
             <name>GitHub OWNER Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/Credentially/drfocused-api</url>
         </repository>
+        <snapshotRepository>
+            <id>drfocused-api</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Credentially/drfocused-api</url>
+        </snapshotRepository>
     </distributionManagement>
     
   <properties>
