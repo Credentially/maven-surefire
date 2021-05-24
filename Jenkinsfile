@@ -37,7 +37,7 @@ node('jenkins-build-agent') {
             }
 
             stage('Deploy') {
-                mvn '-Dmaven.test.skip=true -Dmaven.install.skip=true deploy'
+                mvn '-Dmaven.test.skip=true -Dmaven.install.skip=true -Drat.skip=true deploy'
             }
 
         }
