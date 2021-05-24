@@ -62,15 +62,15 @@
     <module>maven-failsafe-plugin</module>
     <module>maven-surefire-report-plugin</module>
     <module>surefire-its</module>
-    <module>surefire-shared-utils</module>
+<!--    <module>surefire-shared-utils</module>-->
   </modules>
 
-  <scm>
-    <connection>${maven.surefire.scm.devConnection}</connection>
-    <developerConnection>${maven.surefire.scm.devConnection}</developerConnection>
-    <url>https://github.com/apache/maven-surefire/tree/${project.scm.tag}</url>
-    <tag>HEAD</tag>
-  </scm>
+<!--  <scm>-->
+<!--    <connection>${maven.surefire.scm.devConnection}</connection>-->
+<!--    <developerConnection>${maven.surefire.scm.devConnection}</developerConnection>-->
+<!--    <url>https://github.com/apache/maven-surefire/tree/${project.scm.tag}</url>-->
+<!--    <tag>HEAD</tag>-->
+<!--  </scm>-->
   <issueManagement>
     <system>jira</system>
     <url>https://issues.apache.org/jira/browse/SUREFIRE</url>
@@ -650,62 +650,6 @@
           <fail>true</fail>
         </configuration>
       </plugin>
-<!--        <plugin>-->
-<!--            <groupId>org.codehaus.mojo</groupId>-->
-<!--            <artifactId>build-helper-maven-plugin</artifactId>-->
-<!--            <executions>-->
-<!--                <execution>-->
-<!--                    <id>bsh-property</id>-->
-<!--                    <goals>-->
-<!--                        <goal>bsh-property</goal>-->
-<!--                    </goals>-->
-<!--                    <configuration>-->
-<!--                        <properties>-->
-<!--                            <property>jdkHome</property>-->
-<!--                            <property>doSkipTests</property>-->
-<!--                            <property>jvm9ArgsTests</property>-->
-<!--                        </properties>-->
-<!--                        <source>-->
-<!--                            jdkHome = session.getUserProperties().getProperty("jdkHome", project.getProperties().getProperty("jdkHome"));-->
-<!--                            if (jdkHome == null || jdkHome.isEmpty()) {-->
-<!--                                jreHome = System.getProperty("java.home");-->
-<!--                                jrePath = new File(jreHome);-->
-<!--                                jdkHome = "jre".equals(jrePath.getName()) ? jrePath.getParent() : jrePath.getPath();-->
-<!--                            }-->
-<!--                            release = new File(jdkHome, "release");-->
-<!--                            System.out.println("Beanshell found jdkHome=" + jdkHome);-->
-<!--                            System.out.println("Beanshell found jdk-release properties file=" + release.exists());-->
-<!--                            props = new Properties();-->
-<!--                            reader = new FileReader(release);-->
-<!--                            props.load(reader);-->
-<!--                            reader.close();-->
-<!--                            javaVersion = props.getProperty("JAVA_VERSION").replace("\"", "");-->
-<!--                            System.out.println("Beanshell found java version for tests " + javaVersion);-->
-<!--                            majorJavaVersion = Integer.parseInt(javaVersion.substring(0, javaVersion.contains(".") ? javaVersion.indexOf('.') : javaVersion.length()));-->
-<!--                            isSkippedTests = project.getProperties().getProperty("skipTests", session.getUserProperties().getProperty("skipTests"));-->
-<!--                            if (isSkippedTests == null) {-->
-<!--                                isSkippedTests = "false";-->
-<!--                            }-->
-
-<!--                            skip = isSkippedTests;-->
-<!--                            args = "&#45;&#45;add-opens java.base/java.lang=ALL-UNNAMED &#45;&#45;add-opens java.base/java.math=ALL-UNNAMED &#45;&#45;add-opens java.base/java.io=ALL-UNNAMED &#45;&#45;add-opens java.base/java.util=ALL-UNNAMED &#45;&#45;add-opens java.base/java.text=ALL-UNNAMED &#45;&#45;add-opens java.base/java.util.regex=ALL-UNNAMED &#45;&#45;add-opens java.base/java.nio.channels.spi=ALL-UNNAMED &#45;&#45;add-opens java.base/sun.nio.ch=ALL-UNNAMED &#45;&#45;add-opens java.base/java.net=ALL-UNNAMED &#45;&#45;add-opens java.base/java.util.concurrent=ALL-UNNAMED &#45;&#45;add-opens java.base/sun.nio.fs=ALL-UNNAMED &#45;&#45;add-opens java.base/sun.nio.cs=ALL-UNNAMED &#45;&#45;add-opens java.base/java.nio.file=ALL-UNNAMED &#45;&#45;add-opens java.base/java.nio.charset=ALL-UNNAMED";-->
-
-<!--                            if (majorJavaVersion == 1) {-->
-<!--                                isJava7 = javaVersion.matches("^1\\.7.*");-->
-<!--                                skip = "surefire-junit-platform".equals(project.getArtifactId()) ? "" + (Boolean.parseBoolean(isSkippedTests) || isJava7) : isSkippedTests;-->
-<!--                                args = "";-->
-<!--                            }-->
-
-<!--                            doSkipTests = skip;-->
-<!--                            jvm9ArgsTests = args;-->
-
-<!--                            System.out.println("Beanshell doSkipTests=" + doSkipTests);-->
-<!--                            System.out.println("Beanshell jvm9ArgsTests=" + jvm9ArgsTests);-->
-<!--                        </source>-->
-<!--                    </configuration>-->
-<!--                </execution>-->
-<!--            </executions>-->
-<!--        </plugin>-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -735,12 +679,6 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <configuration>
-          <deployAtEnd>true</deployAtEnd>
-        </configuration>
       </plugin>
     </plugins>
   </build>
